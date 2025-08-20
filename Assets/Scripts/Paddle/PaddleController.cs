@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PaddleController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Varaible for Paddles")]
+    [SerializeField] private int paddleSpeed = 10;
+
     void Start()
     {
         
@@ -11,6 +14,14 @@ public class PaddleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        MovePaddle();
+    }
+
+    private void MovePaddle()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+            transform.Translate(Vector3.left * paddleSpeed * Time.deltaTime);
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+            transform.Translate(Vector3.right * paddleSpeed * Time.deltaTime);
     }
 }
