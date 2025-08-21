@@ -15,6 +15,7 @@ public class PaddleController : MonoBehaviour
     void Update()
     {
         MovePaddle();
+        CheckBarrier();
     }
 
     private void MovePaddle()
@@ -23,5 +24,13 @@ public class PaddleController : MonoBehaviour
             transform.Translate(Vector3.left * paddleSpeed * Time.deltaTime);
         else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             transform.Translate(Vector3.right * paddleSpeed * Time.deltaTime);
+    }
+
+    private void CheckBarrier()
+    {
+        // Prevent paddle from going out of bounds
+        Vector3 position = transform.position;
+        position.x = Mathf.Clamp(position.x, -8.0f, 8.0f); // Assuming the play area is between -8 and 8 on the x-axis
+        transform.position = position;
     }
 }
