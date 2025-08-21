@@ -5,6 +5,7 @@ public class PaddleController : MonoBehaviour
 {
     [Header("Varaible for Paddles")]
     [SerializeField] private int paddleSpeed = 10;
+    [SerializeField] private float xPosition = 0.0f;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class PaddleController : MonoBehaviour
     {
         // Prevent paddle from going out of bounds
         Vector3 position = transform.position;
-        position.x = Mathf.Clamp(position.x, -8.0f, 8.0f); // Assuming the play area is between -8 and 8 on the x-axis
+        position.x = Mathf.Clamp(position.x, -xPosition, xPosition); // Assuming the play area is between -8 and 8 on the x-axis
         transform.position = position;
     }
 }
