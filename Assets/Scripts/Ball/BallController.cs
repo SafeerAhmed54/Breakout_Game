@@ -23,7 +23,7 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
-        lastVelocity = ballRb.velocity;
+        lastVelocity = ballRb.linearVelocity;
 
         // Gradually increase speed up to the maximum
         if (currentSpeed < maxSpeed)
@@ -32,7 +32,7 @@ public class BallController : MonoBehaviour
             currentSpeed = Mathf.Min(currentSpeed, maxSpeed);
 
             // Apply the new speed while maintaining direction
-            ballRb.velocity = ballRb.velocity.normalized * currentSpeed;
+            ballRb.linearVelocity = ballRb.linearVelocity.normalized * currentSpeed;
         }
 
     }
@@ -63,26 +63,26 @@ public class BallController : MonoBehaviour
         }
 
         // Apply current speed to the new direction
-        ballRb.velocity = direction * currentSpeed;
+        ballRb.linearVelocity = direction * currentSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Goal1"))
-        {
-            Debug.Log("Goal 1 Scored");
-            //gameManager.AddScore(true);
-            trailRenderer.widthCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 0));
-            StartCoroutine(ResetBall());
-        }
-        else if (collision.gameObject.CompareTag("Goal2"))
-        {
-            Debug.Log("Goal 2 Scored");
-            //gameManager.AddScore(false);
-            trailRenderer.widthCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 0));
-            StartCoroutine(ResetBall());
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Goal1"))
+    //    {
+    //        Debug.Log("Goal 1 Scored");
+    //        //gameManager.AddScore(true);
+    //        trailRenderer.widthCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 0));
+    //        StartCoroutine(ResetBall());
+    //    }
+    //    else if (collision.gameObject.CompareTag("Goal2"))
+    //    {
+    //        Debug.Log("Goal 2 Scored");
+    //        //gameManager.AddScore(false);
+    //        trailRenderer.widthCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(1, 0));
+    //        StartCoroutine(ResetBall());
+    //    }
+    //}
 
     private IEnumerator ResetBall()
     {
@@ -106,6 +106,6 @@ public class BallController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
-        ballRb.velocity = direction * currentSpeed;
+        ballRb.linearVelocity = direction * currentSpeed;
     }
 }
