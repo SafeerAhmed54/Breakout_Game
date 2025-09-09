@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 637884045}
   m_Layer: 0
   m_Name: Balls
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1048,6 +1048,69 @@ Transform:
   - {fileID: 637884050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1029098218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029098220}
+  - component: {fileID: 1029098219}
+  - component: {fileID: 1029098221}
+  m_Layer: 0
+  m_Name: ______BRICK______
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1029098219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029098218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690f6c1d0d366ae4f88886cbba9a6b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5141316954495812136, guid: d8dfcaaea7cfe6643ab3b20230a3ca55, type: 3}
+  poolSize: 10
+  expandable: 1
+--- !u!4 &1029098220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029098218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029098221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029098218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4af164f79250443937711ef1c916c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xRange: {x: -5, y: 5}
+  yRange: {x: 1, y: 5}
+  bricksInstantiation: {fileID: 1029098219}
 --- !u!1 &1304743637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1540,7 @@ GameObject:
   - component: {fileID: 1959469759}
   m_Layer: 0
   m_Name: Paddle
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1722,6 +1785,7 @@ SceneRoots:
   - {fileID: 1304743638}
   - {fileID: 1013497526}
   - {fileID: 117360982}
+  - {fileID: 1029098220}
   - {fileID: 1331296152}
   - {fileID: 1722569939}
   - {fileID: 619394802}
