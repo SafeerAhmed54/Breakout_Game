@@ -11,4 +11,13 @@ public class Bricks : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+        }
+    }
 }
