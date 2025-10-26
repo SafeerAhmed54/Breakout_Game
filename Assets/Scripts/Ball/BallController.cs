@@ -108,4 +108,14 @@ public class BallController : MonoBehaviour
         Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0).normalized;
         ballRb.linearVelocity = direction * currentSpeed;
     }
+
+    public void ResetPosition()
+    {
+        transform.position = Vector2.zero;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        // Optionally delay before relaunching
+        Invoke(nameof(LaunchBall), 1f);
+    }
+
 }
