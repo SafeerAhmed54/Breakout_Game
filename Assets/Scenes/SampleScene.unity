@@ -499,7 +499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3b2c77a7a5aeb4aadab3baf8af4fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  ball: {fileID: 0}
+  player1ScoreText: {fileID: 0}
+  player2ScoreText: {fileID: 0}
+  winText: {fileID: 0}
+  maxScore: 5
 --- !u!4 &285434656
 Transform:
   m_ObjectHideFlags: 0
@@ -1306,7 +1310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3b2c77a7a5aeb4aadab3baf8af4fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  score: 0
+  ball: {fileID: 637884048}
+  player1ScoreText: {fileID: 101336180}
+  player2ScoreText: {fileID: 101336180}
+  winText: {fileID: 2090059374}
+  maxScore: 5
 --- !u!1 &1304743637
 GameObject:
   m_ObjectHideFlags: 0
